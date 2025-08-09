@@ -1,0 +1,115 @@
+/* App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #eae6df;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.chat-sidebar {
+  width: 30%;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+
+/* Message Bubbles */
+.message {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  word-wrap: break-word;
+}
+
+.message.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.message.received {
+  background-color: #ffffff;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+/* Avatar */
+.message .avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #bbb;
+  flex-shrink: 0;
+}
+
+/* Timestamp */
+.message .timestamp {
+  font-size: 11px;
+  color: #888;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+/* Status Badge (Delivered, Read) */
+.message .status {
+  font-size: 11px;
+  color: #34b7f1;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* Emoji Support */
+.message .text {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Hover effect for timestamp */
+.message:hover .timestamp {
+  display: inline;
+  opacity: 1;
+}
+
+/* Message Input styling */
+.message-input {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.message-input button {
+  padding: 10px 16px;
+  background-color: #0b93f6;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.message-input button:hover {
+  background-color: #0a83e6;
+}

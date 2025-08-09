@@ -1,0 +1,78 @@
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  border-left: 1px solid #ddd;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #ededed;
+  border-bottom: 1px solid #ccc;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-id {
+  font-size: 12px;
+  color: #555;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png'); /* Optional subtle bg */
+}
+
+.message-bubble {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+  border-bottom-right-radius: 0;
+}
+
+.received {
+  align-self: flex-start;
+  background-color: #ffffff;
+  border-bottom-left-radius: 0;
+}
+
+.message-meta {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+.message-status {
+  font-size: 12px;
+  color: #4fc3f7;
+}
