@@ -9,7 +9,7 @@ app.post('/webhook', async (req, res) => {
   try {
     const payload = req.body;
 
-    // Example payload structure mapping
+    
     await saveMessage({
       wa_id: payload.wa_id,
       message: payload.text || '',
@@ -26,3 +26,4 @@ app.post('/webhook', async (req, res) => {
 });
 
 app.listen(3000, () => console.log('Webhook listening on port 3000'));
+
