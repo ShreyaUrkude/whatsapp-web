@@ -141,10 +141,10 @@ function App() {
       timestamp: Math.floor(Date.now() / 1000),
     };
 
-    // ✅ Show message in UI
+    
     setMessages((prev) => [...prev, newMsg]);
 
-    // ✅ Save to backend (processed_messages)
+    
     try {
       await fetch('http://localhost:5000/chat', {
         method: 'POST',
