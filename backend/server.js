@@ -12,26 +12,22 @@ let db;
 async function connectDB() {
   await client.connect();
   db = client.db('testcaseApp');
-  console.log('✅ Connected to MongoDB');
+  console.log(' Connected to MongoDB');
 }
 connectDB();
 
-//
-// ✅ Route: Fetch all chat users (for sidebar or chat list)
-//
+
 app.get('/chats', async (req, res) => {
   try {
     const chats = await db.collection('messages').find().toArray();
     res.json(chats);
   } catch (err) {
-    console.error('❌ Failed to fetch chats:', err);
+    console.error(' Failed to fetch chats:', err);
     res.status(500).send('Server error');
   }
 });
 
-//
-// ✅ Route: Save message to `messages` collection (main chat flow)
-//
+
 app.post('/chats', async (req, res) => {
   const { wa_id, sender, text } = req.body;
   if (!wa_id || !sender || !text) return res.status(400).send('Missing fields');
@@ -48,9 +44,7 @@ app.post('/chats', async (req, res) => {
   res.json(updatedMessages);
 });
 
-//
-// ✅ Route: Fetch messages for a specific user
-//
+
 app.get('/messages/:wa_id', async (req, res) => {
   try {
     const messages = await db
@@ -61,14 +55,12 @@ app.get('/messages/:wa_id', async (req, res) => {
 
     res.json(messages);
   } catch (err) {
-    console.error('❌ Failed to fetch messages:', err);
+    console.error(' Failed to fetch messages:', err);
     res.status(500).send('Server error');
   }
 });
 
-//
-// ✅ NEW Route: Save message to `processed_messages` for demo-only flow
-//
+
 app.post('/chat', async (req, res) => {
   const { wa_id, sender, message, timestamp } = req.body;
 
@@ -80,14 +72,13 @@ app.post('/chat', async (req, res) => {
     await db.collection('messages').insertOne({ wa_id, sender, message, timestamp });
     res.status(200).json({ success: true });
   } catch (err) {
-    console.error('❌ Failed to save demo message:', err);
+    console.error(' Failed to save demo message:', err);
     res.status(500).json({ error: 'Server error' });
   }
 });
 
-//
-// ✅ Start server
-//
+
 app.listen(5000, () => {
-  console.log('🚀 Server running on http://localhost:5000');
+  console.log(' Server running on http://localhost:5000');
 });
+
