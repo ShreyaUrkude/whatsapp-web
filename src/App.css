@@ -1,4 +1,4 @@
-/* App Container */
+
 .app-container {
   display: flex;
   height: 100vh;
@@ -20,7 +20,7 @@
   background-color: #f7f7f7;
 }
 
-/* Message Bubbles */
+
 .message {
   max-width: 60%;
   padding: 10px 14px;
@@ -45,7 +45,7 @@
   border-bottom-left-radius: 0;
 }
 
-/* Avatar */
+
 .message .avatar {
   width: 28px;
   height: 28px;
@@ -54,7 +54,7 @@
   flex-shrink: 0;
 }
 
-/* Timestamp */
+
 .message .timestamp {
   font-size: 11px;
   color: #888;
@@ -62,7 +62,7 @@
   white-space: nowrap;
 }
 
-/* Status Badge (Delivered, Read) */
+
 .message .status {
   font-size: 11px;
   color: #34b7f1;
@@ -70,19 +70,19 @@
   white-space: nowrap;
 }
 
-/* Emoji Support */
+
 .message .text {
   font-size: 15px;
   line-height: 1.4;
 }
 
-/* Hover effect for timestamp */
+
 .message:hover .timestamp {
   display: inline;
   opacity: 1;
 }
 
-/* Message Input styling */
+
 .message-input {
   display: flex;
   padding: 10px;
